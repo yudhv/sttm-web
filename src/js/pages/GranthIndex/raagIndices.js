@@ -41,7 +41,7 @@ export default {
         name: 'Raag Section',
         pages: [14, 1352],
         description:
-          "Music is a first class citizen in Guru Granth Sahib. It is used as a tool to add emotion to the poetic lyrics. With this union of logic (from lyrics) and emotion (from music) the listener goes through a much richer and fulfilling spiritual experience. It must be noted that lyrics are more important than the musical notation, since they hold the message. However, music serves the purpose of a necessary companion to the logical word. Music as an art form has had a very rich history in the Indian subcontinent. It's nature as an emotion influencer was understood early on. Subsets of the ancient Rigveda (c 1500-1200 BC) were set to musical notations.\n\nIn general, the Indian classical music has two foundational elements, RAAG and TALA: \nRAAG is based on notes (including microtones) and forms the fabric of the melodic structure.\nTALA provides the rhythm (improvisation using time).\n\nGuru Granth Sahib is predominantly structure using RAAG. Each RAAG is meant to elicit certain emotions in the listener. What follows is a brief description of each RAAG and the emotions it portrays. The hymms within these RAAGs tend to signify similar logical meaning as the RAAG they are situated in.",
+          "Music is a first class citizen in Guru Granth Sahib. It is used as a tool to add emotion to the poetic lyrics. With this union of logic (from lyrics) and emotion (from music) the listener goes through a much richer and fulfilling spiritual experience. It must be noted that lyrics are more important than the musical notation, since they hold the message. However, music serves the purpose of a necessary companion to the logical word. Music as an art form has had a very rich history in the Indian subcontinent. It's nature as an emotion influencer was understood early on. Subsets of the ancient Rigveda (c 1500-1200 BC) were set to musical notations.\n\nIn general, the Indian classical music has two foundational elements, RAAG and TALA: \nRAAG is based on notes (including microtones) and forms the fabric of the melodic structure.\nTALA provides the rhythm (improvisation using time).\n\nGuru Granth Sahib is predominantly structured using RAAG. Each RAAG is meant to elicit certain emotions in the listener. What follows is a brief description of each RAAG and the emotions it portrays. The hymms within these RAAGs tend to signify similar logical meaning as the RAAG they are situated in.",
         subSets: [
           {
             name: 'Raag Sri',
@@ -167,7 +167,7 @@ export default {
             name: 'Raag Jaitsri',
             pages: [696, 711],
             description:
-              'Jaitsri conveys the heartfelt emotion of not being able to live without someone. Its mood is that of dependence and an overwhelming sense of desperately reaching out to be with that person.',
+              'Jaitsri conveys the heartfelt emotion of not being able to live without someone. Its mood is that of dependence and an overwhelming sense of desperation trying to reach out to the beloved.',
             subSets: [
               {
                 name: 'Jaitsri M5 Vaar Saloka Naal',
@@ -180,7 +180,7 @@ export default {
             name: 'Raag Todi',
             pages: [711, 719],
             description:
-              'Todi Raag is used to convey wise messages in a serious tone. The falsehood of materialism (Maya) is a recurrning theme in this Raag.',
+              'Todi Raag is used to convey wise messages in a serious tone. The falsehood of materialism (Maya) is a recurring theme in this Raag.',
           },
           {
             name: 'Raag Bairari',
@@ -197,6 +197,8 @@ export default {
           {
             name: 'Raag Suhi',
             pages: [728, 795],
+            description:
+              'Suhi has an uplifting mood to it. It repeatedly explores the state of mind from an impure one (no love for Truth) to a pure and realised one. Consequently, Suhi Raag contains many hymms that depict the steps a mind takes from the beginning to the final stage of union. Songs of this transition naturally leave the listener with a hopeful and uplifted mood.',
             subSets: [
               {
                 name: 'Vaar Suhi Ki',
@@ -208,6 +210,8 @@ export default {
           {
             name: 'Raag Bilaval',
             pages: [795, 859],
+            description:
+              'Bilaval has a pleasant happiness to it and is extremely beautiful. A combination of humility and love for the Master make this Ragg a very moving experience for the listener.',
             subSets: [
               {
                 name: 'Bilaval Ki Vaar',
@@ -218,10 +222,14 @@ export default {
           {
             name: 'Raag Gond',
             pages: [859, 876],
+            description:
+              'Gond is an expression of triumph, however these feelings are balanced and in perspective ensuring that there is also an aspect of humility. Therefore, although there is a sense of knowing and understanding the achievement, there is not a feeling of becoming obsessed or getting lost in the achievement itself.',
           },
           {
             name: 'Raag Ramkali',
             pages: [876, 975],
+            description:
+              'The emotions in Ramkali are like those of a wise teacher disciplining their student. The student is aware of the pain of learning, but is still conscious of the fact that ultimately it is for the best. In this way Ramkali conveys the change from all that we are familiar with, to something we are certain will be better.',
             subSets: [
               {
                 name: 'Ramkali Ki Vaar M3',
@@ -239,16 +247,22 @@ export default {
             ],
           },
           {
-            name: 'Raag Nat Narain',
+            name: 'Raag Nat Narayan',
             pages: [975, 984],
+            description:
+              'Nat Narayan consists of feelings of hastiness and impatience, however simultaneously there is stability and control. Although there is control in the Raag, there is still the impression that it is unbalanced and prone to topple at any time.',
           },
           {
             name: 'Raag Mali Gaura',
             pages: [984, 989],
+            description:
+              'Mali Gaura conveys the confidence of an expert, whose knowledge is self-evident in both their outlook and actions.',
           },
           {
             name: 'Raag Maru',
             pages: [989, 1107],
+            description:
+              'Maru was traditionally sung on the battlefield in preparation for war. This Raag has an aggressive nature, which creates an inner strength and power to express and emphasise the truth, regardless of the consequences. Maru’s nature conveys the fearlessness and strength that ensures the truth is spoken, no matter what the cost.',
             subSets: [
               {
                 name: 'Maru Vaar M3',
@@ -260,18 +274,26 @@ export default {
           {
             name: 'Raag Tukhari',
             pages: [1107, 1118],
+            description:
+              'The form of Tukhari is that of a silently sitting Yogi and in the nature of this raag the pangs of separation are seen. However, Guru Sahibs have composed the entire Bani of Tukhari in Chhants and induced the happiness of unison. In this Raag Guru Nanak Devji’s Baramaha is written which is a composition of Vijog (separation) and being in chhants it has elements of Sanjog also. There is no Bhagat Bani in this raag.',
           },
           {
             name: 'Raag Kedara',
             pages: [1118, 1125],
+            description:
+              'Kedara expresses and makes the mind aware of the true character and nature of the soul. It conveys the emotions of honesty, integrity and truthfulness in a practical and caring way. This approach highlights the soul’s character and is memorable, so that the mind is made aware, without arousing cynicism.',
           },
           {
             name: 'Raag Bhairon',
             pages: [1125, 1168],
+            description:
+              'Bhairao embodies the soul’s faith and heartfelt devotion towards The Creator. It is a kind of fanaticism, where there is a feeling of not being aware or caring about anything else. The emotions conveyed are those of contentment and of being absorbed in a steadfast belief or faith. In this Raag, the soul is relaying the happiness that the mind could potentially experience if it joined in with this devotion.',
           },
           {
             name: 'Raag Basant',
             pages: [1168, 1197],
+            description:
+              'Basant denotes the changing of the season and the newness of spring. This Raag encourages the mind to brush away its selfishness, just like spring-cleaning removes all the cobwebs and creates a fresh start. There are feelings of hope and expectation of a new beginning and the start of a new cycle. However, these emotions are not dependent on the physical change of the season, but are an encouragement of an internal effort to change.',
             subSets: [
               {
                 name: 'Basant Ki Vaar',
@@ -283,6 +305,8 @@ export default {
           {
             name: 'Raag Sarang',
             pages: [1197, 1254],
+            description:
+              "Sarang's character is soothing and has the ability to extinguish the minds smouldering selfishness and negative nature. The emotions of Sarang quench the minds burning desires, by expressing and highlighting the soul’s pure and true thoughts. This is a positive and fulfilling change.",
             subSets: [
               {
                 name: 'Sarang Ki Vaar',
@@ -292,8 +316,10 @@ export default {
             ],
           },
           {
-            name: 'Raag Mallar',
+            name: 'Raag Malhar',
             pages: [1254, 1294],
+            description:
+              'Malhar is a communication of feelings from the soul, to show the mind how to become cool and refreshed. The mind is always burning with the desire to reach its goals quickly and without effort, however the emotions conveyed in this Raag are able to bring composure and fulfilment to the mind. It is able to bring the mind into this calmness, bringing a sense of satisfaction and contentment.',
             subSets: [
               {
                 name: 'Vaar Mallar Ki',
@@ -303,8 +329,10 @@ export default {
             ],
           },
           {
-            name: 'Raag Kanara',
+            name: 'Raag Kaanara',
             pages: [1294, 1319],
+            description:
+              'Kaanara invokes feelings of being overcome by a personality, which is so impressive that its character is difficult to stop thinking about. The personality conveyed has a magnetism, which makes you think of them as your own and is able to win you over with its remarkable qualities and outlook.',
             subSets: [
               {
                 name: 'Kanare Ki Vaar',
@@ -316,20 +344,28 @@ export default {
           {
             name: 'Raag Kalian',
             pages: [1319, 1327],
+            description:
+              'Kaliaan produces happiness . The soul in the state of bliss waits for the light of dawn. The soul under the spell of bliss becomes intoxicated on again and again hearing the praises of her lover (God)',
           },
           {
             name: 'Raag Prabhati',
             pages: [1327, 1352],
+            description:
+              'The emotions conveyed in Parbhati are those of extreme devotion; there is an intense confidence and love for the entity it is devoted to. This affection arises from knowledge, common sense and a detailed study. There is therefore an understanding and a considered will to devote itself to that entity.',
           },
           {
             name: 'Raag Jaijavanti',
             pages: [1352, 1352],
+            description:
+              'Jaijavanti expresses the feeling of happiness and satisfaction of achievement, however it simultaneously conveys the sadness of losing. This Raag conveys a sense of having to put your duty first, no matter what your inner feelings may be. The dual emotions of joy and sorrow help to keep the listeners stable and prevent them from reveling in their own achievement.',
           },
         ],
       },
       {
         name: 'Post Raag Section',
         pages: [1353, 1430],
+        description:
+          'The post-raga section (pages 1353 to 1430) contains the Saloks, Swayyes and other compositions. At the close (page 1429) is the Mundavani (seal) to mark the end of Guru Granth Sahib, so that no spurious compositions can thereafter be added, followed by a Guru Arjun Dev Ji’s thanks-giving Salok for the successful completion of the great task by Divine grace. At the end of the post-raga section is the Ragamala (pages 1429 to 1430) which contains a catalogue of most of the ragas used in SGGS.',
         subSets: [
           {
             name: 'Salok Sehaskriti Mahalla 1',
