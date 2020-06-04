@@ -219,6 +219,8 @@ export default {
               },
             ],
           },
+          // All descriptions below this point have been copied over from either jawadditaksal.org or sikhWiki
+          // TODO: Needs some love
           {
             name: 'Raag Gond',
             pages: [859, 876],

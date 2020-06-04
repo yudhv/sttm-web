@@ -4,10 +4,22 @@ import { pageView } from '../../util/analytics';
 import PropTypes from 'prop-types';
 import raagIndices from './raagIndices';
 import { toAngURL } from '../../util';
-import BreadCrumb from '../../components/Breadcrumb';
-import { TEXTS } from '../../constants';
+import { ExpandableRow } from '../../components/ExpandableRow';
+// import BreadCrumb from '../../components/Breadcrumb';
+// import { TEXTS } from '../../constants';
 
-const sanitizeHash = (...args) => args.map(a => a.replace(/ /gi, '')).join('-');
+const sanitizeHash = (...args) =>
+  args.map((a) => a.replace(/ /gi, '')).join('-');
+
+const getAngLinks = (from, to, highlight) => {
+  return (
+    <div style={{ alignSelf: 'flex-end' }}>
+      <Link to={toAngURL({ ang: from, highlight })}>{from}</Link>
+      <p> to </p>
+      <Link to={toAngURL({ ang: to })}>{to}</Link>
+    </div>
+  );
+};
 
 export default class GranthIndex extends React.PureComponent {
   static propTypes = {
@@ -17,9 +29,9 @@ export default class GranthIndex extends React.PureComponent {
   render() {
     return (
       <div className="row" id="content-root">
-        <BreadCrumb links={[{ title: TEXTS.URIS.INDEX }]} />
+        {/* <BreadCrumb links={[{ title: TEXTS.URIS.INDEX }]} /> */}
         <div id="help">
-          <div id="sidebar">
+          {/* <div id="sidebar">
             <ul>
               {Object.entries(raagIndices).map(
                 ([key, { name: granthName, indices }]) => (
@@ -40,14 +52,35 @@ export default class GranthIndex extends React.PureComponent {
                 )
               )}
             </ul>
-          </div>
+          </div> */}
 
           <main>
             {Object.entries(raagIndices).map(
-              ([key, { name: granthName, source, indices }]) => (
+              ([key, { name: granthName, indices, description }]) => (
                 <React.Fragment key={key}>
-                  <h3 id={granthName}> {granthName}</h3>
-                  <table>
+                  <ExpandableRow
+                    title={<h2>{granthName}</h2>}
+                    description={description}
+                  >
+                    {indices.map(
+                      ({
+                        name: sectionName,
+                        pages: [from, to],
+                        highlight,
+                        description,
+                      }) => (
+                        <ExpandableRow
+                          key={sectionName}
+                          title={<h4>{sectionName}</h4>}
+                          description={description}
+                          sideContent={getAngLinks(from, to, highlight)}
+                        >
+                          <div>Hello</div>
+                        </ExpandableRow>
+                      )
+                    )}
+                  </ExpandableRow>
+                  {/* <table>
                     <thead>
                       <tr>
                         <th> Raag Name </th>
@@ -70,7 +103,7 @@ export default class GranthIndex extends React.PureComponent {
                         </tr>
                       ))}
                     </tbody>
-                  </table>
+                  </table> */}
                 </React.Fragment>
               )
             )}
