@@ -4,113 +4,31 @@ import { pageView } from '../../util/analytics';
 import PropTypes from 'prop-types';
 import raagIndices from './raagIndices';
 import { toAngURL } from '../../util';
-import { ExpandableRow } from '../../components/ExpandableRow';
-// import BreadCrumb from '../../components/Breadcrumb';
-// import { TEXTS } from '../../constants';
+import BreadCrumb from '../../components/Breadcrumb';
+import { TEXTS } from '../../constants';
 
+// Not using this currently to scroll automatically
 const sanitizeHash = (...args) =>
   args.map((a) => a.replace(/ /gi, '')).join('-');
 
-const getAngLinks = (from, to, highlight) => {
-  return (
-    <div style={{ alignSelf: 'flex-end' }}>
-      <Link to={toAngURL({ ang: from, highlight })}>{from}</Link>
-      <p> to </p>
-      <Link to={toAngURL({ ang: to })}>{to}</Link>
-    </div>
-  );
-};
+const GRANTH_NAMES = raagIndices.map(({ name }) => name);
 
 export default class GranthIndex extends React.PureComponent {
   static propTypes = {
     location: PropTypes.shape({ hash: PropTypes.string }),
   };
 
-  render() {
-    return (
-      <div className="row" id="content-root">
-        {/* <BreadCrumb links={[{ title: TEXTS.URIS.INDEX }]} /> */}
-        <div id="help">
-          {/* <div id="sidebar">
-            <ul>
-              {Object.entries(raagIndices).map(
-                ([key, { name: granthName, indices }]) => (
-                  <li key={key}>
-                    <details>
-                      <summary>{granthName}</summary>
-                      <ul>
-                        {indices.map(({ name }) => (
-                          <li key={name}>
-                            <a href={`#${sanitizeHash(granthName, name)}`}>
-                              {name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
-                  </li>
-                )
-              )}
-            </ul>
-          </div> */}
+  constructor(props) {
+    super(props);
+    this.state = {
+      // Set the initial state to show the SGGS description
+      selection: [GRANTH_NAMES[0]],
+    };
+  }
 
-          <main>
-            {Object.entries(raagIndices).map(
-              ([key, { name: granthName, indices, description }]) => (
-                <React.Fragment key={key}>
-                  <ExpandableRow
-                    title={<h2>{granthName}</h2>}
-                    description={description}
-                  >
-                    {indices.map(
-                      ({
-                        name: sectionName,
-                        pages: [from, to],
-                        highlight,
-                        description,
-                      }) => (
-                        <ExpandableRow
-                          key={sectionName}
-                          title={<h4>{sectionName}</h4>}
-                          description={description}
-                          sideContent={getAngLinks(from, to, highlight)}
-                        >
-                          <div>Hello</div>
-                        </ExpandableRow>
-                      )
-                    )}
-                  </ExpandableRow>
-                  {/* <table>
-                    <thead>
-                      <tr>
-                        <th> Raag Name </th>
-                        <th> Ang Range </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {indices.map(({ name, pages: [from, to], highlight }) => (
-                        <tr id={`${sanitizeHash(granthName, name)}`} key={name}>
-                          <td>{name}</td>
-                          <td>
-                            <Link
-                              to={toAngURL({ ang: from, source, highlight })}
-                            >
-                              {from}
-                            </Link>{' '}
-                            to{' '}
-                            <Link to={toAngURL({ ang: to, source })}>{to}</Link>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table> */}
-                </React.Fragment>
-              )
-            )}
-          </main>
-        </div>
-      </div>
-    );
+  componentDidMount() {
+    this.scrollToHash();
+    pageView('/index');
   }
 
   scrollToHash = () => {
@@ -123,8 +41,85 @@ export default class GranthIndex extends React.PureComponent {
     }
   };
 
-  componentDidMount() {
-    this.scrollToHash();
-    pageView('/index');
+  // Helps check if a list item is selected to show subSets and description
+  isSelected = (name) => {
+    if (this.state.selection.includes(name)) {
+      return true;
+    }
+  };
+
+  // Called onClick to show description and subSets
+  setSelection = (path) => {
+    if (path.join() == this.state.selection.join()) {
+      path.pop();
+    }
+    this.setState({ selection: path });
+  };
+
+  // Recursive function that keeps churning lists until no subSets are left
+  // path is a list that helps keep the parents open when a child is clicked upon
+  renderList = (subSets, source, path = []) => {
+    return subSets.map(
+      (
+        { name, pages: [from, to], source: localSource, description, subSets },
+        i
+      ) => {
+        if (localSource) {
+          source = localSource;
+        }
+
+        return (
+          <div key={name} style={{ marginLeft: '40px' }}>
+            <li
+              className="list--item"
+              style={{
+                animationDelay: i < 15 ? `${20 * i}ms` : 0,
+              }}
+              onClick={() => {
+                this.setSelection(path.concat([name]));
+              }}
+            >
+              <div className="index-list">
+                <div className="index-list--header">
+                  <p>{name}</p>
+                  <p>
+                    <Link
+                      className="index-list--url"
+                      to={toAngURL({ ang: from, localSource })}
+                    >
+                      {from}
+                    </Link>{' '}
+                    to{' '}
+                    <Link
+                      className="index-list--url"
+                      to={toAngURL({ ang: to, localSource })}
+                    >
+                      {to}
+                    </Link>
+                  </p>
+                </div>
+                {this.isSelected(name) && (
+                  <div className="index-list--description">{description}</div>
+                )}
+              </div>
+            </li>
+            {this.isSelected(name) && subSets && subSets.length > 0
+              ? this.renderList(subSets, localSource, path.concat([name]))
+              : null}
+          </div>
+        );
+      }
+    );
+  };
+
+  render() {
+    return (
+      <div className="row" id="content-root">
+        <BreadCrumb links={[{ title: TEXTS.URIS.INDEX }]} />
+        <div id="help">
+          <main>{this.renderList(raagIndices)}</main>
+        </div>
+      </div>
+    );
   }
 }

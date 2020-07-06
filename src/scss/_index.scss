@@ -1,4 +1,23 @@
-.index-root {
-  color: $sttm-orange;
+.index-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  text-transform: none;
+
+  &--description {
+    text-align: left;
+  }
+
+  &--header {
+    display: flex;
+    font-size: large;
+    font-weight: bold;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &--url {
+    color: $sttm-orange;
+  }
 }

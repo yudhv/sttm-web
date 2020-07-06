@@ -1,27 +1,28 @@
-export default {
-  SGGS: {
-    name: 'Sri Guru Granth Sahib Jee',
+export default [
+  {
+    name: 'Sri Guru Granth Sahib',
     source: 'G',
+    pages: [1, 1430],
     description:
-      "Guru Granth is the central spiritual text that is revered by Sikhs unanimously. The 10th Guru of the Sikhs - Guru Gobind Singh, declared that the need for more human teachers for Sikhs had ended, and ceremoniously handed over the spiritual throne to Guru Granth Sahib. Hence, this text's importance is undisputed in the Sikh community. It is the default source for knowledge about unity with the Truth and the way of life for a spiritual seeker.\n\nEven though primarily revered by the Sikhs, it is remarkably religion-agnostic and contains universal messages of social equality, justice, gender indifference, etc that we take for granted today, but were borderline revolutionary in 15th century India that was predominantly orthodox in it's communal belief system.\n\nDue to the voluminous nature of the text, it is important for the reader to understand how it is architected. What follows is turn-by-turn bried summary of the structure of this poetic and spiritual guide. ",
-    indices: [
+      "Guru Granth is the central spiritual text that is revered by Sikhs unanimously. The 10th Guru of the Sikhs - Guru Gobind Singh, declared that the need for more human teachers for Sikhs had ended, and ceremoniously handed over the spiritual throne to Guru Granth Sahib. Hence, this text's importance is undisputed in the Sikh community. It is the default source for knowledge about unity with the Truth and the way of life for a spiritual seeker.\n\nEven though primarily revered by the Sikhs, it is remarkably religion-agnostic and contains universal messages of social equality, justice, gender indifference, etc that we take for granted today, but were borderline revolutionary in 15th century India that was predominantly orthodox in it's communal belief system.\n\nDue to the voluminous nature of the text, it is important for the reader to understand how it is architected. What follows is turn-by-turn brief summary of the structure of this poetic and spiritual guide. ",
+    subSets: [
       {
         name: 'Pre Raag Section',
         pages: [1, 13],
         description:
-          'Guru Granth Sahib in its default font/page size has a total of 1430 pages. Of those, nearly 1340 pages are given a musical framework based on the Raag (described below). The first 13 pages of the holy book have no musical framework, which may signify their role as an introduction/summary or the central idea of the text that follows. This section is comprised of 3 core hymms.',
+          'Guru Granth in its default font/page size has a total of 1430 pages. Of those, nearly 1340 pages are given a musical framework based on the Raag (described below). The first 13 pages of the holy book have no musical framework, which may signify their role as an introduction/summary or the central idea of the text that follows. This section is comprised of 3 core hymms.',
         subSets: [
           {
             name: 'Mul Mantra',
-            pages: [1],
+            pages: [1, 1],
             description:
-              "Mul Mantra (literally 'BASE STATEMENT') is the first and foremost idea shared by the Granth. It is highly recommended that the reader go through it owing to its incredibly succint definition of the Truth.",
+              "Mul Mantra (literally 'BASE STATEMENT') is the first and foremost idea shared by Guru Granth. It is highly recommended that the reader go through it owing to its incredibly succint definition of the Truth.",
           },
           {
             name: 'Jap',
             pages: [1, 8],
             description:
-              "Jap is the first hymm of Guru Granth Sahib. It has 38 stanzas that introduce some of the core concepts in Guru Granth's spiritual vernacular. Terms like HUKAM (command), NAAM (name), Sabad (word) are expounded here. This hymm is the first of several hymms recited by Sikhs everyday (signifying its importance). Among other themes, it introduces the reader to the message of a deterministic universe, the importance of love, and the path to enlightenment.",
+              "Jap is the first hymm of Guru Granth. It has 38 stanzas that introduce some of the core concepts in Guru Granth's spiritual vernacular. Terms like HUKAM (command), NAAM (name), Sabad (word) are expounded here. This hymm is the first of several hymms recited by Sikhs everyday (signifying its importance). Among other themes, it introduces the reader to the message of a deterministic universe, the importance of love, and the path to enlightenment.",
           },
           {
             name: 'Rehras',
@@ -41,7 +42,7 @@ export default {
         name: 'Raag Section',
         pages: [14, 1352],
         description:
-          "Music is a first class citizen in Guru Granth Sahib. It is used as a tool to add emotion to the poetic lyrics. With this union of logic (from lyrics) and emotion (from music) the listener goes through a much richer and fulfilling spiritual experience. It must be noted that lyrics are more important than the musical notation, since they hold the message. However, music serves the purpose of a necessary companion to the logical word. Music as an art form has had a very rich history in the Indian subcontinent. It's nature as an emotion influencer was understood early on. Subsets of the ancient Rigveda (c 1500-1200 BC) were set to musical notations.\n\nIn general, the Indian classical music has two foundational elements, RAAG and TALA: \nRAAG is based on notes (including microtones) and forms the fabric of the melodic structure.\nTALA provides the rhythm (improvisation using time).\n\nGuru Granth Sahib is predominantly structured using RAAG. Each RAAG is meant to elicit certain emotions in the listener. What follows is a brief description of each RAAG and the emotions it portrays. The hymms within these RAAGs tend to signify similar logical meaning as the RAAG they are situated in.",
+          "Music is a first class citizen in Guru Granth. It is used as a tool to add emotion to the poetic lyrics. With this union of logic (from lyrics) and emotion (from music) the listener goes through a much richer and fulfilling spiritual experience. It must be noted that lyrics are more important than the musical notation, since they hold the message. However, music serves the purpose of a necessary companion to the logical word. Music as an art form has had a very rich history in the Indian subcontinent. It's nature as an emotion influencer was understood early on. Subsets of the ancient Rigveda (c 1500-1200 BC) were set to musical notations.\n\nIn general, the Indian classical music has two foundational elements, RAAG and TALA: \nRAAG is based on notes (including microtones) and forms the fabric of the melodic structure.\nTALA provides the rhythm (improvisation using time).\n\nGuru Granth predominantly structured using RAAG. Each RAAG is meant to elicit certain emotions in the listener. What follows is a brief description of each RAAG and the emotions it portrays. The hymms within these RAAGs tend to signify similar logical meaning as the RAAG they are situated in.",
         subSets: [
           {
             name: 'Raag Sri',
@@ -116,7 +117,7 @@ export default {
             name: 'Raag Devagandhari',
             pages: [527, 537],
             description:
-              'Devgandhari conveys the feeling of satisfaction. The incredible peace and tranquility observed by the saint authors of Guru Granth Sahib after their union with the beloved is conveyed in Devagandhari. Depiction of this state of mind makes the listener feel empowered and passionate toward the Truth.',
+              'Devgandhari conveys the feeling of satisfaction. The incredible peace and tranquility observed by the saint authors of Guru Granth their union with the beloved is conveyed in Devagandhari. Depiction of this state of mind makes the listener feel empowered and passionate toward the Truth.',
           },
           {
             name: 'Raag Bihagara',
@@ -134,7 +135,7 @@ export default {
           {
             name: 'Raag Vadhans',
             pages: [557, 594],
-            descriptions:
+            description:
               "Vadhans Raag houses extreme spritual romanticism. The self is compared to a bride and the Truth/God the husband. The bride must leave her birth home (materialism) to join with her husband. The bride's bodily ornaments are symbolic of a love-imbued virtuous mind that is ready for union with the husband - the beloved. The sad state of a bride who never meets her true husband is also depicted in Raag Vadhans.",
             subSets: [
               {
@@ -367,7 +368,7 @@ export default {
         name: 'Post Raag Section',
         pages: [1353, 1430],
         description:
-          'The post-raga section (pages 1353 to 1430) contains the Saloks, Swayyes and other compositions. At the close (page 1429) is the Mundavani (seal) to mark the end of Guru Granth Sahib, so that no spurious compositions can thereafter be added, followed by a Guru Arjun Dev Ji’s thanks-giving Salok for the successful completion of the great task by Divine grace. At the end of the post-raga section is the Ragamala (pages 1429 to 1430) which contains a catalogue of most of the ragas used in SGGS.',
+          'The post-raga section (pages 1353 to 1430) contains the Saloks, Swayyes and other compositions. At the close (page 1429) is the Mundavani (seal) to mark the end of Guru Granth, so that no spurious compositions can thereafter be added, followed by a Guru Arjun Dev Ji’s thanks-giving Salok for the successful completion of the great task by Divine grace. At the end of the post-raga section is the Ragamala (pages 1429 to 1430) which contains a catalogue of most of the ragas used in SGGS.',
         subSets: [
           {
             name: 'Salok Sehaskriti Mahalla 1',
@@ -419,10 +420,11 @@ export default {
       },
     ],
   },
-  DG: {
+  {
     name: 'Sri Dasam Granth Sahib',
     source: 'D',
-    indices: [
+    pages: [1, 1428],
+    subSets: [
       { name: 'Jaap Sahib', pages: [1, 10] },
       { name: 'Akal Ustat', pages: [11, 38] },
       { name: 'Bachittar Natak', pages: [39, 73] },
@@ -451,4 +453,4 @@ export default {
       { name: 'Hikayat', pages: [1394, 1428], highlight: 140380 },
     ],
   },
-};
+];
